@@ -28,7 +28,7 @@ public class FlashlightController : MonoBehaviour
     {
         if (isHeld)
         {
-            // Переключение фонарика на ЛКМ
+     
             if (Input.GetMouseButtonDown(0))
             {
                 ToggleFlashlight();
@@ -100,7 +100,7 @@ public class FlashlightController : MonoBehaviour
         GetComponent<Rigidbody>().isKinematic = false;
         GetComponent<Collider>().enabled = true;
 
-        // Добавим силу, чтобы фонарик падал вперёд
+
         Rigidbody rb = GetComponent<Rigidbody>();
         rb.AddForce(Camera.main.transform.forward * 2f, ForceMode.Impulse);
     }
