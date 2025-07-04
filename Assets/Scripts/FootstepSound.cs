@@ -3,9 +3,9 @@ using UnityEngine;
 public class FootstepSound : MonoBehaviour
 {
     public AudioSource footstepAudio;
-    public float baseStepDelay = 0.5f;     // задержка при обычной скорости
-    public float maxSpeed = 6f;            // скорость, при которой delay минимальный
-    public float minStepDelay = 0.2f;      // минимально возможная задержка
+    public float baseStepDelay = 0.5f;     
+    public float maxSpeed = 6f;           
+    public float minStepDelay = 0.2f;     
 
     private Rigidbody rb;
     private float stepTimer;
@@ -22,7 +22,7 @@ public class FootstepSound : MonoBehaviour
 
         bool isMoving = speed > 0.1f;
 
-        // Линейно уменьшаем delay при увеличении скорости
+        
         float stepDelay = Mathf.Lerp(baseStepDelay, minStepDelay, speed / maxSpeed);
 
         if (isMoving && IsGrounded())
