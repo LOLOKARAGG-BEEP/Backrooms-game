@@ -10715,7 +10715,6 @@ MonoBehaviour:
   pickupRange: 10
   interactableLayer:
     serializedVersion: 2
-    m_Bits: 0
     m_Bits: 64
 --- !u!1 &167308815
 GameObject:
@@ -66284,7 +66283,6 @@ MonoBehaviour:
   batteryDrainRate: 3
   blinkThreshold: 15
   blinkInterval: 0.3
-  toggleSound: {fileID: 8300000, guid: d23581c5bfa69ba42a3f783de19f1270, type: 3}
 --- !u!4 &1058847045 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3611981543468476840, guid: fef70ba99a0290d47b1df73e90bde7e0,
