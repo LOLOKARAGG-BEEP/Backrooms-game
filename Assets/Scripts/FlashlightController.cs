@@ -8,62 +8,52 @@ public class FlashlightController : MonoBehaviour
     public float blinkThreshold = 15f;
     public float blinkInterval = 0.3f;
 
-    public AudioClip toggleSound;
-    private AudioSource audioSource;
-
     private bool isHeld = false;
     private bool isOn = false;
     private float blinkTimer = 0f;
 
-    void Start()
-    {
-        audioSource = GetComponent<AudioSource>();
-        if (audioSource == null)
-            audioSource = gameObject.AddComponent<AudioSource>();
-
-        audioSource.playOnAwake = false;
-    }
-
     void Update()
     {
-        if (isHeld)
+        if (!isHeld) return;
+
+        // Если включён — расходуем батарею
+        if (isOn)
         {
-     
-            if (Input.GetMouseButtonDown(0))
-            {
-                ToggleFlashlight();
-            }
+            DrainBattery();
 
-            if (isOn)
-            {
-                DrainBattery();
-            }
-
-            if (isOn && batteryLife <= blinkThreshold)
+            if (batteryLife <= blinkThreshold)
             {
                 BlinkFlashlight();
             }
+            else
+            {
+                flashlightLight.enabled = true;
+            }
         }
     }
 
-    void ToggleFlashlight()
+    public void ToggleFlashlight()
     {
+        if (!isHeld) return;
+
+        if (batteryLife <= 0f)
+        {
+            flashlightLight.enabled = false;
+            isOn = false;
+            return;
+        }
+
         isOn = !isOn;
         flashlightLight.enabled = isOn;
-
-        if (toggleSound != null)
-        {
-            audioSource.PlayOneShot(toggleSound);
-        }
     }
 
     void DrainBattery()
     {
         batteryLife -= batteryDrainRate * Time.deltaTime;
 
-        if (batteryLife <= 0)
+        if (batteryLife <= 0f)
         {
-            batteryLife = 0;
+            batteryLife = 0f;
             isOn = false;
             flashlightLight.enabled = false;
         }
@@ -83,7 +73,7 @@ public class FlashlightController : MonoBehaviour
     {
         isHeld = true;
         transform.SetParent(Camera.main.transform);
-        transform.localPosition = new Vector3(0.4f, -0.5f, 1.0f);
+        transform.localPosition = new Vector3(0.4f, -0.5f, 1f);
         transform.localRotation = Quaternion.Euler(0f, -86f, 0f);
 
         GetComponent<Rigidbody>().isKinematic = true;
@@ -100,9 +90,11 @@ public class FlashlightController : MonoBehaviour
         GetComponent<Rigidbody>().isKinematic = false;
         GetComponent<Collider>().enabled = true;
 
-
         Rigidbody rb = GetComponent<Rigidbody>();
-        rb.AddForce(Camera.main.transform.forward * 2f, ForceMode.Impulse);
+        if (rb != null)
+        {
+            rb.AddForce(Camera.main.transform.forward * 2f, ForceMode.Impulse);
+        }
     }
 
     public bool IsHeld()
@@ -112,6 +104,6 @@ public class FlashlightController : MonoBehaviour
 
     public void AddBattery(float amount)
     {
-        batteryLife = Mathf.Clamp(batteryLife + amount, 0, 100f);
+        batteryLife = Mathf.Clamp(batteryLife + amount, 0f, 100f);
     }
 }
