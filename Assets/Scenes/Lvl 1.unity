@@ -35730,13 +35730,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4628339262129618245, guid: 38ffa7aa35d13254796b498a289105d1,
         type: 3}
-<<<<<<< HEAD
       propertyPath: m_StaticEditorFlags
       value: 0
-=======
       propertyPath: m_Layer
       value: 6
->>>>>>> Max
       objectReference: {fileID: 0}
     - target: {fileID: 5436120340730931199, guid: 38ffa7aa35d13254796b498a289105d1,
         type: 3}
