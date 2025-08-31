@@ -16,7 +16,7 @@ public class FlashlightController : MonoBehaviour
     {
         if (!isHeld) return;
 
-        
+        // Если включён — расходуем батарею
         if (isOn)
         {
             DrainBattery();

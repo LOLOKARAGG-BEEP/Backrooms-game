@@ -45,7 +45,7 @@ public class EdibleItem : MonoBehaviour
         if (eatSound != null)
             AudioSource.PlayClipAtPoint(eatSound, transform.position);
 
-        Destroy(gameObject); 
+        Destroy(gameObject); // удалить объект после использования
     }
 
     public bool IsHeld()

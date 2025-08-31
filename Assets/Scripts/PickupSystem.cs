@@ -7,11 +7,10 @@ public class PickupSystem : MonoBehaviour
 
     private FlashlightController heldFlashlight = null;
     private EdibleItem heldEdible = null;
-    private KeyPickup heldKey = null; 
 
     void Update()
     {
-       
+        // ➤ Подобрать (G)
         if (Input.GetKeyDown(KeyCode.G))
         {
             Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
@@ -19,15 +18,16 @@ public class PickupSystem : MonoBehaviour
 
             if (Physics.Raycast(ray, out RaycastHit hit, pickupRange, interactableLayer))
             {
-                
+                // 1. Если это съедобное
                 EdibleItem edible = hit.collider.GetComponent<EdibleItem>();
-                if (edible != null && heldEdible == null && heldFlashlight == null && heldKey == null)
+                if (edible != null && heldEdible == null && heldFlashlight == null)
                 {
                     edible.PickUp(Camera.main.transform);
                     heldEdible = edible;
                     return;
                 }
 
+                // 2. Батарейка
                 BatteryPickup battery = hit.collider.GetComponent<BatteryPickup>();
                 if (battery != null)
                 {
@@ -35,17 +35,9 @@ public class PickupSystem : MonoBehaviour
                     return;
                 }
 
-                KeyPickup key = hit.collider.GetComponent<KeyPickup>();
-                if (key != null && heldKey == null && heldFlashlight == null && heldEdible == null)
-                {
-                    key.PickUp(Camera.main.transform);
-                    heldKey = key;
-                    return;
-                }
-
-            
+                // 3. Фонарик
                 FlashlightController fc = hit.collider.GetComponent<FlashlightController>();
-                if (fc != null && heldFlashlight == null && heldEdible == null && heldKey == null)
+                if (fc != null && heldFlashlight == null && heldEdible == null)
                 {
                     fc.PickUp();
                     heldFlashlight = fc;
@@ -54,7 +46,7 @@ public class PickupSystem : MonoBehaviour
             }
         }
 
-  
+        // ➤ Выбросить (H)
         if (Input.GetKeyDown(KeyCode.H))
         {
             if (heldFlashlight != null)
@@ -68,43 +60,21 @@ public class PickupSystem : MonoBehaviour
                 heldEdible.Drop();
                 heldEdible = null;
             }
-
-            if (heldKey != null)
-            {
-                heldKey.Drop();
-                heldKey = null;
-            }
         }
 
-
+        // ➤ Использовать предмет (ЛКМ / Mouse0)
         if (Input.GetMouseButtonDown(0))
         {
-            
             if (heldFlashlight != null)
             {
-                heldFlashlight.ToggleFlashlight();
+                heldFlashlight.ToggleFlashlight(); // включение фонаря
             }
-
             else if (heldEdible != null)
             {
-                heldEdible.Use();
+                heldEdible.Use(); // съесть
                 heldEdible = null;
-            }
-           
-            else if (heldKey != null)
-            {
-                Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
-                if (Physics.Raycast(ray, out RaycastHit hit, pickupRange, interactableLayer))
-                {
-                    DoorController door = hit.collider.GetComponent<DoorController>();
-                    if (door != null)
-                    {
-                        door.OpenDoor(); 
-                        Destroy(heldKey.gameObject); 
-                        heldKey = null;
-                    }
-                }
             }
         }
     }
 }
+
