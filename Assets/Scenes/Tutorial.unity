@@ -72709,55 +72709,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!1 &979149177
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 979149179}
-  - component: {fileID: 979149178}
-  m_Layer: 0
-  m_Name: post processing
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &979149178
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 979149177}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IsGlobal: 1
-  priority: 0
-  blendDistance: 0
-  weight: 1
-  sharedProfile: {fileID: 11400000, guid: 994acc945e3da3540bca3b746fe46593, type: 2}
---- !u!4 &979149179
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 979149177}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.3512657, y: -1.1567216, z: -308.82275}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &980260353
 Mesh:
   m_ObjectHideFlags: 0
@@ -104000,7 +103951,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: c58b8ea20e59bf540a6ef364c680feb5, type: 2}
+  sharedProfile: {fileID: 11400000, guid: 83b9bfb1c07f2cc409ce5a236c71a2db, type: 2}
 --- !u!4 &1341392036
 Transform:
   m_ObjectHideFlags: 0
@@ -151679,5 +151630,4 @@ SceneRoots:
   - {fileID: 110795810}
   - {fileID: 1341392036}
   - {fileID: 1569056160}
-  - {fileID: 979149179}
   - {fileID: 1204344506}
