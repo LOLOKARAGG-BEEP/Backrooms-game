@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5382052710934681281}
   - component: {fileID: 9015995320311454052}
   - component: {fileID: 6556054342715010478}
-  - component: {fileID: -1540772471111232904}
+  - component: {fileID: 7684151175942144701}
   m_Layer: 0
   m_Name: Oak_high_1_2
   m_TagString: Untagged
@@ -85,8 +85,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &-1540772471111232904
-MeshCollider:
+--- !u!136 &7684151175942144701
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -103,7 +103,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -2585763739669022497, guid: 3c85350ec752e7c4d90d13e94b180a65, type: 3}
+  serializedVersion: 2
+  m_Radius: 0.45
+  m_Height: 10
+  m_Direction: 1
+  m_Center: {x: 0, y: 4.37, z: 0}

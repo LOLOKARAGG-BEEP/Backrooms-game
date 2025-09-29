@@ -6457,6 +6457,7 @@ GameObject:
   - component: {fileID: 2036287723}
   - component: {fileID: 2036287722}
   - component: {fileID: 2036287721}
+  - component: {fileID: 2036287724}
   m_Layer: 0
   m_Name: Terrain (1)
   m_TagString: Untagged
@@ -6494,7 +6495,7 @@ Terrain:
   m_Enabled: 1
   serializedVersion: 6
   m_TerrainData: {fileID: 15600000, guid: 6306b83eefd78ee43a61a8271e7f1a35, type: 2}
-  m_TreeDistance: 5000
+  m_TreeDistance: 50
   m_TreeBillboardDistance: 50
   m_TreeCrossFadeLength: 5
   m_TreeMaximumFullLODCount: 50
@@ -6539,6 +6540,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2036287724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2036287720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f605363122925541b5d19c157d938ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TreePrototypes:
+  - {fileID: 1485145988911329059, guid: 1b323422438057e4cb00a8e96866d859, type: 3}
+  - {fileID: 4754451832049290363, guid: 78de3af7ba376e0438633c337c9dcec9, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
