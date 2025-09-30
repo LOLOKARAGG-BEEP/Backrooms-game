@@ -13435,14 +13435,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a68c43fe1f2a47cfa234b5eeaa98012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Intensity: 700000
+  m_Intensity: 25000
   m_EnableSpotReflector: 1
   m_LuxAtDistance: 1
   m_InnerSpotPercent: 0
   m_SpotIESCutoffPercent: 100
   m_LightDimmer: 1
   m_VolumetricDimmer: 1
-  m_LightUnit: 0
+  m_LightUnit: 3
   m_FadeDistance: 10000
   m_VolumetricFadeDistance: 10000
   m_AffectDiffuse: 1
@@ -13557,7 +13557,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.7150943, g: 0.79807645, b: 1, a: 1}
-  m_Intensity: 8912.677
+  m_Intensity: 25000
   m_Range: 60
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -34483,14 +34483,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a68c43fe1f2a47cfa234b5eeaa98012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Intensity: 700000
+  m_Intensity: 25000
   m_EnableSpotReflector: 1
   m_LuxAtDistance: 1
   m_InnerSpotPercent: 0
   m_SpotIESCutoffPercent: 100
   m_LightDimmer: 1
   m_VolumetricDimmer: 1
-  m_LightUnit: 0
+  m_LightUnit: 3
   m_FadeDistance: 10000
   m_VolumetricFadeDistance: 10000
   m_AffectDiffuse: 1
@@ -34605,7 +34605,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.7150943, g: 0.79807645, b: 1, a: 1}
-  m_Intensity: 8912.677
+  m_Intensity: 25000
   m_Range: 60
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -40115,7 +40115,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 0.15238334, b: 0.088679194, a: 1}
   m_Intensity: 22281.691
-  m_Range: 38.49
+  m_Range: 60
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -40159,7 +40159,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 4604
   m_UseColorTemperature: 1
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 38.49}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 60}
   m_UseBoundingSphereOverride: 1
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -76026,14 +76026,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a68c43fe1f2a47cfa234b5eeaa98012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Intensity: 700000
+  m_Intensity: 25000
   m_EnableSpotReflector: 1
   m_LuxAtDistance: 1
   m_InnerSpotPercent: 0
   m_SpotIESCutoffPercent: 100
   m_LightDimmer: 1
   m_VolumetricDimmer: 1
-  m_LightUnit: 0
+  m_LightUnit: 3
   m_FadeDistance: 10000
   m_VolumetricFadeDistance: 10000
   m_AffectDiffuse: 1
@@ -76148,7 +76148,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.7150943, g: 0.79807645, b: 1, a: 1}
-  m_Intensity: 8912.677
+  m_Intensity: 25000
   m_Range: 60
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -76734,7 +76734,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 0.15238334, b: 0.088679194, a: 1}
   m_Intensity: 8912.677
-  m_Range: 38.49
+  m_Range: 60
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -76778,7 +76778,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 4604
   m_UseColorTemperature: 1
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 38.49}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 60}
   m_UseBoundingSphereOverride: 1
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -82991,14 +82991,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a68c43fe1f2a47cfa234b5eeaa98012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Intensity: 700000
+  m_Intensity: 25000
   m_EnableSpotReflector: 1
   m_LuxAtDistance: 1
   m_InnerSpotPercent: 0
   m_SpotIESCutoffPercent: 100
   m_LightDimmer: 1
   m_VolumetricDimmer: 1
-  m_LightUnit: 0
+  m_LightUnit: 3
   m_FadeDistance: 10000
   m_VolumetricFadeDistance: 10000
   m_AffectDiffuse: 1
@@ -83113,7 +83113,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.7150943, g: 0.79807645, b: 1, a: 1}
-  m_Intensity: 8912.677
+  m_Intensity: 25000
   m_Range: 60
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -116967,14 +116967,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a68c43fe1f2a47cfa234b5eeaa98012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Intensity: 700000
+  m_Intensity: 25000
   m_EnableSpotReflector: 1
   m_LuxAtDistance: 1
   m_InnerSpotPercent: 0
   m_SpotIESCutoffPercent: 100
   m_LightDimmer: 1
   m_VolumetricDimmer: 1
-  m_LightUnit: 0
+  m_LightUnit: 3
   m_FadeDistance: 10000
   m_VolumetricFadeDistance: 10000
   m_AffectDiffuse: 1
@@ -117089,7 +117089,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.7150943, g: 0.79807645, b: 1, a: 1}
-  m_Intensity: 8912.677
+  m_Intensity: 25000
   m_Range: 60
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -117307,7 +117307,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 0.15238334, b: 0.088679194, a: 1}
   m_Intensity: 8912.677
-  m_Range: 38.49
+  m_Range: 60
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -117351,7 +117351,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 4604
   m_UseColorTemperature: 1
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 38.49}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 60}
   m_UseBoundingSphereOverride: 1
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -130009,14 +130009,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a68c43fe1f2a47cfa234b5eeaa98012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Intensity: 700000
+  m_Intensity: 25000
   m_EnableSpotReflector: 1
   m_LuxAtDistance: 1
   m_InnerSpotPercent: 0
   m_SpotIESCutoffPercent: 100
   m_LightDimmer: 1
   m_VolumetricDimmer: 1
-  m_LightUnit: 0
+  m_LightUnit: 3
   m_FadeDistance: 10000
   m_VolumetricFadeDistance: 10000
   m_AffectDiffuse: 1
@@ -130131,7 +130131,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.7150943, g: 0.79807645, b: 1, a: 1}
-  m_Intensity: 8912.677
+  m_Intensity: 25000
   m_Range: 60
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -134078,14 +134078,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a68c43fe1f2a47cfa234b5eeaa98012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Intensity: 700000
+  m_Intensity: 25000
   m_EnableSpotReflector: 1
   m_LuxAtDistance: 1
   m_InnerSpotPercent: 0
   m_SpotIESCutoffPercent: 100
   m_LightDimmer: 1
   m_VolumetricDimmer: 1
-  m_LightUnit: 0
+  m_LightUnit: 3
   m_FadeDistance: 10000
   m_VolumetricFadeDistance: 10000
   m_AffectDiffuse: 1
@@ -134200,7 +134200,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.7150943, g: 0.79807645, b: 1, a: 1}
-  m_Intensity: 8912.677
+  m_Intensity: 25000
   m_Range: 60
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -138179,14 +138179,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a68c43fe1f2a47cfa234b5eeaa98012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Intensity: 700000
+  m_Intensity: 25000
   m_EnableSpotReflector: 1
   m_LuxAtDistance: 1
   m_InnerSpotPercent: 0
   m_SpotIESCutoffPercent: 100
   m_LightDimmer: 1
   m_VolumetricDimmer: 1
-  m_LightUnit: 0
+  m_LightUnit: 3
   m_FadeDistance: 10000
   m_VolumetricFadeDistance: 10000
   m_AffectDiffuse: 1
@@ -138301,7 +138301,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.7150943, g: 0.79807645, b: 1, a: 1}
-  m_Intensity: 8912.677
+  m_Intensity: 25000
   m_Range: 60
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
