@@ -1,4 +1,3 @@
-
 using UnityEngine;
 
 public class KeyPickup : MonoBehaviour
@@ -9,7 +8,6 @@ public class KeyPickup : MonoBehaviour
     {
         isHeld = true;
 
-
         Rigidbody rb = GetComponent<Rigidbody>();
         rb.isKinematic = true;
         rb.velocity = Vector3.zero;
@@ -18,8 +16,6 @@ public class KeyPickup : MonoBehaviour
         GetComponent<Collider>().enabled = false;
 
         transform.SetParent(parent);
-
-     
         transform.localPosition = new Vector3(0.4f, -0.5f, 1f);
         transform.localRotation = Quaternion.Euler(0f, -86f, 0f);
     }
@@ -27,15 +23,11 @@ public class KeyPickup : MonoBehaviour
     public void Drop()
     {
         isHeld = false;
-
-
         transform.SetParent(null);
-
 
         Rigidbody rb = GetComponent<Rigidbody>();
         rb.isKinematic = false;
         GetComponent<Collider>().enabled = true;
-
 
         rb.AddForce(Camera.main.transform.forward * 2f, ForceMode.Impulse);
     }

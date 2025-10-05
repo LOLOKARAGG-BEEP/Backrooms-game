@@ -7,11 +7,11 @@ public class PickupSystem : MonoBehaviour
 
     private FlashlightController heldFlashlight = null;
     private EdibleItem heldEdible = null;
-    private KeyPickup heldKey = null; 
+    private KeyPickup heldKey = null;
 
     void Update()
     {
-       
+
         if (Input.GetKeyDown(KeyCode.G))
         {
             Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
@@ -19,7 +19,7 @@ public class PickupSystem : MonoBehaviour
 
             if (Physics.Raycast(ray, out RaycastHit hit, pickupRange, interactableLayer))
             {
-                
+
                 EdibleItem edible = hit.collider.GetComponent<EdibleItem>();
                 if (edible != null && heldEdible == null && heldFlashlight == null && heldKey == null)
                 {
@@ -28,12 +28,14 @@ public class PickupSystem : MonoBehaviour
                     return;
                 }
 
+
                 BatteryPickup battery = hit.collider.GetComponent<BatteryPickup>();
                 if (battery != null)
                 {
                     battery.PickUp();
                     return;
                 }
+
 
                 KeyPickup key = hit.collider.GetComponent<KeyPickup>();
                 if (key != null && heldKey == null && heldFlashlight == null && heldEdible == null)
@@ -43,7 +45,7 @@ public class PickupSystem : MonoBehaviour
                     return;
                 }
 
-            
+
                 FlashlightController fc = hit.collider.GetComponent<FlashlightController>();
                 if (fc != null && heldFlashlight == null && heldEdible == null && heldKey == null)
                 {
@@ -54,7 +56,7 @@ public class PickupSystem : MonoBehaviour
             }
         }
 
-  
+
         if (Input.GetKeyDown(KeyCode.H))
         {
             if (heldFlashlight != null)
@@ -79,28 +81,25 @@ public class PickupSystem : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            
             if (heldFlashlight != null)
             {
                 heldFlashlight.ToggleFlashlight();
             }
-
             else if (heldEdible != null)
             {
                 heldEdible.Use();
                 heldEdible = null;
             }
-           
             else if (heldKey != null)
             {
                 Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
                 if (Physics.Raycast(ray, out RaycastHit hit, pickupRange, interactableLayer))
                 {
-                    DoorController door = hit.collider.GetComponent<DoorController>();
+                    DoorTransition door = hit.collider.GetComponent<DoorTransition>();
                     if (door != null)
                     {
                         door.OpenDoor(); 
-                        Destroy(heldKey.gameObject); 
+                        Destroy(heldKey.gameObject);
                         heldKey = null;
                     }
                 }
