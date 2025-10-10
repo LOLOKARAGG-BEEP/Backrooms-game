@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EdibleItem : MonoBehaviour
+public class EdibleItem : MonoBehaviour, IPickUp, IUsable
 {
     public float restoreAmount = 20f;
     public AudioClip pickupSound;
@@ -9,7 +9,7 @@ public class EdibleItem : MonoBehaviour
     private bool isHeld = false;
     private Transform originalParent;
 
-    public void PickUp(Transform hand)
+    public bool PickUp(Transform hand)
     {
         isHeld = true;
         originalParent = transform.parent;
@@ -22,6 +22,8 @@ public class EdibleItem : MonoBehaviour
 
         if (pickupSound != null)
             AudioSource.PlayClipAtPoint(pickupSound, hand.position);
+
+        return true;
     }
 
     public void Drop()
@@ -34,7 +36,7 @@ public class EdibleItem : MonoBehaviour
         GetComponent<Rigidbody>().AddForce(Camera.main.transform.forward * 2f, ForceMode.Impulse);
     }
 
-    public void Use()
+    public bool Use()
     {
         PlayerStats stats = Camera.main.GetComponentInParent<PlayerStats>();
         if (stats != null)
@@ -45,7 +47,8 @@ public class EdibleItem : MonoBehaviour
         if (eatSound != null)
             AudioSource.PlayClipAtPoint(eatSound, transform.position);
 
-        Destroy(gameObject); 
+        Destroy(gameObject);
+        return false;
     }
 
     public bool IsHeld()

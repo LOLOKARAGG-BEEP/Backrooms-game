@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class FlashlightController : MonoBehaviour
+public class FlashlightController : MonoBehaviour, IPickUp, IUsable
 {
     public Light flashlightLight;
     public float batteryLife = 100f;
@@ -32,19 +32,21 @@ public class FlashlightController : MonoBehaviour
         }
     }
 
-    public void ToggleFlashlight()
+    public bool Use()
     {
-        if (!isHeld) return;
+        if (!isHeld) return true;
 
         if (batteryLife <= 0f)
         {
             flashlightLight.enabled = false;
             isOn = false;
-            return;
+            return true;
         }
 
         isOn = !isOn;
         flashlightLight.enabled = isOn;
+
+        return true;
     }
 
     void DrainBattery()
@@ -69,7 +71,7 @@ public class FlashlightController : MonoBehaviour
         }
     }
 
-    public void PickUp()
+    public bool PickUp(Transform hand)
     {
         isHeld = true;
         transform.SetParent(Camera.main.transform);
@@ -78,10 +80,11 @@ public class FlashlightController : MonoBehaviour
 
         GetComponent<Rigidbody>().isKinematic = true;
         GetComponent<Collider>().enabled = false;
+        return true;
     }
 
     public void Drop()
-    {
+    {     
         isHeld = false;
         isOn = false;
         flashlightLight.enabled = false;
