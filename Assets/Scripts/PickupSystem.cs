@@ -2,108 +2,49 @@
 
 public class PickupSystem : MonoBehaviour
 {
-    public float pickupRange = 4f;
-    public LayerMask interactableLayer;
-
-    private FlashlightController heldFlashlight = null;
-    private EdibleItem heldEdible = null;
-    private KeyPickup heldKey = null;
-
+    public float pickupRange = 4f; 
+    private IPickUp pickUp = null;    
+    
     void Update()
     {
-
         if (Input.GetKeyDown(KeyCode.G))
         {
             Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
             Debug.DrawRay(ray.origin, ray.direction * pickupRange, Color.green, 1f);
-
-            if (Physics.Raycast(ray, out RaycastHit hit, pickupRange, interactableLayer))
+            if (Physics.Raycast(ray, out RaycastHit hit, pickupRange))
             {
-
-                EdibleItem edible = hit.collider.GetComponent<EdibleItem>();
-                if (edible != null && heldEdible == null && heldFlashlight == null && heldKey == null)
+                IPickUp Up = hit.collider.GetComponent<IPickUp>();
+                if (Up != null)
                 {
-                    edible.PickUp(Camera.main.transform);
-                    heldEdible = edible;
-                    return;
-                }
-
-
-                BatteryPickup battery = hit.collider.GetComponent<BatteryPickup>();
-                if (battery != null)
-                {
-                    battery.PickUp();
-                    return;
-                }
-
-
-                KeyPickup key = hit.collider.GetComponent<KeyPickup>();
-                if (key != null && heldKey == null && heldFlashlight == null && heldEdible == null)
-                {
-                    key.PickUp(Camera.main.transform);
-                    heldKey = key;
-                    return;
-                }
-
-
-                FlashlightController fc = hit.collider.GetComponent<FlashlightController>();
-                if (fc != null && heldFlashlight == null && heldEdible == null && heldKey == null)
-                {
-                    fc.PickUp();
-                    heldFlashlight = fc;
-                    return;
-                }
-            }
-        }
-
-
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            if (heldFlashlight != null)
-            {
-                heldFlashlight.Drop();
-                heldFlashlight = null;
-            }
-
-            if (heldEdible != null)
-            {
-                heldEdible.Drop();
-                heldEdible = null;
-            }
-
-            if (heldKey != null)
-            {
-                heldKey.Drop();
-                heldKey = null;
-            }
-        }
-
-
-        if (Input.GetMouseButtonDown(0))
-        {
-            if (heldFlashlight != null)
-            {
-                heldFlashlight.ToggleFlashlight();
-            }
-            else if (heldEdible != null)
-            {
-                heldEdible.Use();
-                heldEdible = null;
-            }
-            else if (heldKey != null)
-            {
-                Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
-                if (Physics.Raycast(ray, out RaycastHit hit, pickupRange, interactableLayer))
-                {
-                    DoorTransition door = hit.collider.GetComponent<DoorTransition>();
-                    if (door != null)
+                    bool Pick = Up.PickUp(transform);
+                    if (Pick)
                     {
-                        door.OpenDoor(); 
-                        Destroy(heldKey.gameObject);
-                        heldKey = null;
+                        pickUp = Up;
                     }
                 }
             }
+        }
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            if(pickUp != null)
+            {
+                pickUp.Drop();
+                pickUp = null;
+            }          
+        }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            if(pickUp != null)
+            {
+                IUsable usable = pickUp as IUsable;
+                if (usable != null)
+                {
+                    bool Ret = usable.Use();
+                    if(!Ret)
+                    pickUp = null;
+                }
+            }            
         }
     }
 }

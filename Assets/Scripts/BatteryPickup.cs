@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 
-public class BatteryPickup : MonoBehaviour
+public class BatteryPickup : MonoBehaviour, IPickUp
 {
     public float batteryAmount = 30f;
     public AudioClip pickupSound;
 
-    public void PickUp()
+    public bool PickUp(Transform hand)
     {
         FlashlightController flashlight = Camera.main.GetComponentInChildren<FlashlightController>();
         if (flashlight != null)
@@ -19,5 +19,10 @@ public class BatteryPickup : MonoBehaviour
 
             Destroy(gameObject);
         }
+        return false;
+    }
+    public void Drop()
+    {
+        // Batteries cannot be dropped once picked up
     }
 }

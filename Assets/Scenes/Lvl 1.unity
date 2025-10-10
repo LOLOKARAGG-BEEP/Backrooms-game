@@ -9461,9 +9461,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickupRange: 10
-  interactableLayer:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!4 &165141760 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4459864850019384738, guid: 6bacecc4f3df9584198879c73a6b6c36,
@@ -37532,11 +37529,11 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 0.3, y: 0.3, z: 0.3}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &833128358 stripped
 GameObject:
@@ -91072,7 +91069,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -93319,6 +93316,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 015e118de505759418ce3c129472ada3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactableLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &1979384461 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3924941474975972511, guid: 26d15919b8b6095489c9af2ff6a92a67,

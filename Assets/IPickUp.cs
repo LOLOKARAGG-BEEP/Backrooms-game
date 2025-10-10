@@ -4,5 +4,12 @@ using UnityEngine;
 
 public interface IPickUp
 {
-    void PickUp(Transform hand);
+    // Возврат true, якщо цей предмет можна підняти 
+    bool PickUp(Transform hand);
+    void Drop();
+}
+public interface IUsable
+{
+    // Возврат true, якщо хочете щоб предмет залишився в руках після використання
+    bool Use();
 }
