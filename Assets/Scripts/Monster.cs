@@ -42,7 +42,7 @@ public class MonsterAI : MonoBehaviour
         {
             isChasing = false;
             animator.SetBool("isChasing", false);
-            agent.ResetPath();
+            //agent.ResetPath();
         }
 
 
