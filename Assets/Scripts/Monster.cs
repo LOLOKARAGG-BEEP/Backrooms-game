@@ -3,14 +3,14 @@ using UnityEngine.AI;
 
 public class MonsterAI : MonoBehaviour
 {
-    public Transform player;         
-    public float chaseRange = 10f;    
-    public float attackRange = 1.5f;  
-    public float moveSpeed = 3.5f;
+    public Transform player;             
+    public float chaseRange = 10f;       
+    public float attackRange = 1.5f;    
+    public float moveSpeed = 3.5f;      
 
     private Animator animator;
     private NavMeshAgent agent;
-    private bool isChasing = false;
+    private bool isWalking = false;
 
     void Start()
     {
@@ -23,31 +23,45 @@ public class MonsterAI : MonoBehaviour
 
     void Update()
     {
-        if (player == null) return;
+        if (player == null || agent == null || animator == null) return;
 
         float distance = Vector3.Distance(transform.position, player.position);
 
         if (distance <= chaseRange)
         {
-            isChasing = true;
             agent.SetDestination(player.position);
-            animator.SetBool("isChasing", true);
 
+            if (!isWalking)
+            {
+                animator.SetBool("isWalking", true);
+                isWalking = true;
+            }
 
             Vector3 direction = (player.position - transform.position).normalized;
             direction.y = 0;
-            transform.rotation = Quaternion.LookRotation(direction);
+            if (direction != Vector3.zero)
+                transform.rotation = Quaternion.LookRotation(direction);
         }
         else
         {
-            isChasing = false;
-            animator.SetBool("isChasing", false);
-            //agent.ResetPath();
+
+            agent.ResetPath();
+
+            if (isWalking)
+            {
+                animator.SetBool("isWalking", false);
+                isWalking = false;
+            }
         }
 
 
         if (distance <= attackRange)
         {
+
+        }
+        else
+        {
+            agent.isStopped = false;
         }
     }
 }

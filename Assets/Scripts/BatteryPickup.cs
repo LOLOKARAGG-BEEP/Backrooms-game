@@ -23,6 +23,5 @@ public class BatteryPickup : MonoBehaviour, IPickUp
     }
     public void Drop()
     {
-        // Batteries cannot be dropped once picked up
     }
 }

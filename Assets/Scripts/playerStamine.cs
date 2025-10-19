@@ -38,7 +38,6 @@ public class PlayerStamina : MonoBehaviour
 
     void HandleCrouch()
     {
-        // Если зажат Ctrl — присесть
         if (Input.GetKey(KeyCode.LeftControl))
         {
             isCrouching = true;
@@ -54,7 +53,6 @@ public class PlayerStamina : MonoBehaviour
         bool moving = Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0;
         isRunning = Input.GetKey(KeyCode.LeftShift) && currentStamina > 0 && moving && !isCrouching;
 
-        // Расход / восстановление стамины
         if (isRunning)
         {
             currentStamina -= runDrainRate * Time.deltaTime;
@@ -65,7 +63,6 @@ public class PlayerStamina : MonoBehaviour
         }
         currentStamina = Mathf.Clamp(currentStamina, 0, maxStamina);
 
-        // Выбор скорости
         float speed = walkSpeed;
         if (isRunning) speed = runSpeed;
         else if (isCrouching) speed = crouchSpeed;
